@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+
+<h:head>
+    <h:outputStylesheet  library="webjars" name="bootstrap/5.3.3/css/bootstrap.css"/>
+</h:head>
+
+<h:body>
+    <div class="container-fluid">
+        <div class="text-center mt-5">
+            <h:outputText class="h1" value="Employee List"/>
+        </div>
+        <br/><br/>
+        <hr/><br/>
+
+        <h:form id="employeeForm">
+            <div class="container">
+                <h:messages globalOnly="true" infoClass="alert alert-success" errorClass="alert alert-danger" warnClass="alert alert-warning"    style="list-style: none" />
+            </div>
+
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-12 border border-primary rounded p-3">
+                        <h:dataTable id="employeeTable" var="employee" value="#{employeBean.employes}"  styleClass="table table-striped" style="width:100%!important;">
+                            <h:column class="w-25">
+                                <f:facet  name="header">Id</f:facet>
+                                <h:outputText value="#{employee.id}"/>
+                            </h:column>
+                            <h:column class="w-25">
+                                <f:facet  name="header">Name</f:facet>
+                                <h:outputText value="#{employee.id}"/>
+                            </h:column>
+                            <h:column class="w-25">
+                                <f:facet  name="header">Email</f:facet>
+                                <h:outputText value="#{employee.id}"/>
+                            </h:column>
+                            <h:column class="w-25">
+                                <f:facet  name="header">Action</f:facet>
+                                 <h:commandButton value="Delete" action="#{employeBean.delete(employe)}" type="submit"
+                                                 class="btn btn-danger text-center" />
+                            </h:column>
+                        </h:dataTable>
+                    </div>
+                </div>
+            </div>
+
+        </h:form>
+    </div>
+    <h:outputStylesheet library="webjars" value="bootstrap/5.3.3/js/bootstrap.js"/>
+</h:body>
+</html>

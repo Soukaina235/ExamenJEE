@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+    <persistence-unit name="Eclipselink"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>org.example.examjee.model.Employe</class>
+        <class>org.example.examjee.model.Project</class>
+
+        <properties>
+            <property name="jakarta.persistence.jdbc.url"
+                      value="***/examjee"/>
+            <property name="jakarta.persistence.jdbc.user" value="***"/>
+            <property name="jakarta.persistence.jdbc.password" value="***"/>
+            <property name="jakarta.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/>
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.ddl-generation"
+                      value="create-tables"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+
+<h:head>
+    <h:outputStylesheet  library="webjars" name="bootstrap/5.3.3/css/bootstrap.css"/>
+</h:head>
+
+<h:body>
+    <div>
+        <h:form>
+
+            <div class="mb-3">
+                <h:outputLabel for="name" value="Name" class="form-label"/>
+                <h:inputText id="name" value="#{employe.name}" class="form-control" style="margin-right: 17px;"/>
+            </div>
+
+            <div class="mb-3">
+                <h:outputLabel for="email" value="Email" class="form-label"/>
+                <h:inputText id="email" value="#{employe.email}" class="form-control" style="margin-right: 17px;"/>
+            </div>
+
+
+            <h:commandButton type="submit" id="signup" value="Sign Up"
+                             action="#{employeBean.signUp(employe)}" class="btn btn-success"/>
+        </h:form>
+    </div>
+
+</h:body>
+</html>
